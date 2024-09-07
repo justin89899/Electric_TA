@@ -1,0 +1,360 @@
+/* Global reset */
+* {
+  box-sizing: border-box;
+}
+
+/* Body and HTML to take full height */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif; /* or any font-family of your choice */
+}
+
+/* App container */
+.App {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* Header styles */
+.header {
+  display: flex;
+  padding: 2rem;
+  padding-left: 2rem;
+  padding-right: 2rem;
+  background-color: #c5d2d0; /* light gray background for header */
+  text-align: right;
+  align-items: center;
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+}
+
+.header-left h4 {
+  position: absolute;
+  left: 6%;
+  top: 5%;
+  font-weight: bold;
+  font-size: 13px;
+  color: #3b5e58;
+  width: 8rem;
+  text-align: left;
+}
+
+
+.header button {
+  padding: 0.25rem 0.5rem;
+  position: absolute;
+  left: 93.6%;
+  background-color: #316159;
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  justify-content: center;
+  font-size: 1rem;
+  width: 5.5rem; /* or you can specify a width */
+  height: 3rem; /* or any other value */
+}
+
+.header button:disabled {
+  background-color: #9E9E9E; /* gray out when loading or disabled */
+}
+
+.header-logo {
+  height: 73px; /* Adjust the height as needed */
+  margin-right: 10px; /* Add some space between the logo and the text */
+  vertical-align: middle; /* Align it vertically with the text */
+}
+
+/* Form styles */
+.question-form {
+  padding: 1rem;
+  margin-left: 16px;
+  background-color: #ffffff; /* white background for the form */
+  border-top: 1px solid #eaeaea;
+}
+
+.question-form form {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem; /* space between form items */
+  width: 98.5%;
+}
+
+.question-form label {
+  font-weight: bold;
+}
+
+/* Styles for input placeholder */
+.question-form input::placeholder {
+  font-size: 1rem; /* Set the size as needed */
+  color: #9a9a9a; /* Placeholder text color */
+}
+
+.question-form input[type="text"] {
+  flex-grow: 1;
+  border: 1px solid #cccccc;
+  border-radius: 10px;
+  height: 50px;
+  font-size: 1rem;
+  padding-left: 20px;
+}
+
+.icon-button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0.5rem; /* Adjust padding as needed */
+  border: none;
+  background: transparent; /* Set background to transparent */
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+/* Optionally, you may want to add some hover effect for better user interaction */
+.icon-button:hover {
+  background: #e0e0e0; /* A light grey background on hover */
+}
+
+
+/* Answer section styles */
+.answer-section {
+  padding: 1rem;
+  background-color: #f8f8f8; /* very light gray for answer section */
+}
+
+/* Error message styles */
+.error-message {
+  color: #D32F2F; /* red color for error messages */
+  padding: 1rem;
+}
+
+/* Collapsible QA styles */
+.btn.btn-link.qa-history-toggle {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 0.5rem;
+  border: 5px;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: #316159;
+  color: #ffffff;
+  cursor: pointer;
+  width: 9rem;
+  height: 2.5rem;
+  font-size: 11px;
+}
+
+.btn.btn-link.qa-history-toggle.active {
+  background-color: #cdd3cd; /* New color when active */
+  color: #316159;
+}
+
+.clearHistory {
+  position: absolute;
+  left: 94.2%;
+  padding: 0.5rem;
+  border: 5px;
+  margin: 0 auto;
+  margin-top: 5px;
+  margin-bottom: 20px;
+  border-radius: 20px;
+  background: #316159;
+  color: #ffffff;
+  cursor: pointer;
+  width: 4.5rem;
+  height: 2.5rem;
+  font-size: 11px;
+
+}
+
+.show-history-and-clear-history-container {
+  position: relative;
+  align-items: center;
+  padding: 1rem;
+  margin-bottom: 40px;
+}
+
+.collapsible-qa-item button {
+  background: none;
+  border: none;
+  text-align: left;
+  padding-left: 0px;
+  margin-left: 12px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: bold;
+  color: #316159;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  width: 100%;
+}
+
+
+.question-and-delete-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.question-and-delete-container .delete-btn {
+  width: 100px;
+  justify-content: center;
+  padding-right: 30px;
+  padding-left: 30px;
+  margin-right: 10px;
+}
+
+.collapsible-qa-item button:hover {
+  color: #fafcfb;
+}
+
+.collapsible-qa-item button:focus {
+  outline: none; /* Optional: Removes the focus outline */
+}
+
+.arrow {
+  display: inline-block;
+  margin-right: 5px;
+  transition: transform 0.3s; /* Smooth transition for the arrow rotation */
+}
+
+/* Rotate arrow when item is open */
+.arrow.open {
+  transform: rotate(90deg); /* Rotates the arrow to point horizontally */
+}
+
+/* Show the answer when the item is open */
+.collapsible-qa-item.open .answer {
+  display: block;
+}
+
+.collapsible-qa-item.open {
+  background-color: #ebefeb;
+}
+
+
+.collapsible-qa-item .answer {
+  padding: 0.5rem;
+}
+
+.collapsible-qa-item .answer:hover {
+  padding: 0.5rem;
+  color: white;
+}
+
+/* Collapsible QA Item Styles */
+.collapsible-qa-item {
+  border: 1px solid #eaeaea;
+  border-radius: 10px;
+  margin: 0.5rem 0;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.collapsible-qa-item:hover {
+  background-color: #cdd3cd;
+  color: white;
+}
+
+.collapsible-qa-item .question {
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  background-color: #e5ab2b;
+}
+
+.collapsible-qa-item.open .question {
+  color: white; /* Change text color to white */
+}
+
+
+.scholar-icon {
+  /* Assuming a 20x20px icon size */
+  height: 20px;
+  width: 20px;
+  /* Add other styles if necessary */
+}
+
+.answer {
+  padding: 10px; /* Padding for spacing around the text */
+  border-radius: 10px; /* Optional: rounded corners */
+  margin-left: 35px;
+  margin-right: 35px;
+}
+
+.answer h2 {
+  font-size: 1.2rem; /* Slightly larger font size for headings */
+  font-weight: bolder;
+  color: #333; /* Dark gray for better readability */
+}
+
+.answer p {
+  color: #555; /* Lighter text for the answer content */
+  line-height: 1.6; /* More readable line spacing */
+  width: 80%;
+}
+
+.answer img,
+.answer a {
+  margin-top: 25px;
+  display: block; /* Make them block elements so they respect padding/margin */
+}
+
+.answer img{
+  border-radius: 10px;
+}
+
+.answer a {
+  font-weight: bold;
+  color: #555555;
+}
+
+.answer a:hover{
+  font-weight: bold;
+  color: white;
+}
+
+.answer ul {
+  padding-left: 20px; /* Indent for bullet lists */
+}
+
+.answer li {
+  margin-bottom: 5px; /* Space between list items */
+}
+
+/* Style for horizontal rules */
+.answer hr {
+  border: 10px;
+  height: 1px;
+  background-color: #868585; /* You can choose any color you like */
+  margin-top: 2.5rem;
+  margin-bottom: 1.5rem;
+}
+
+h1 {
+  color: #565656;
+}
+
+.current-answer-container:hover {
+  background-color: #cdd3cd;
+  border-radius: 10px;
+}
+
+.current-answer-container {
+  background-color: #ebefeb;
+  border-radius: 10px;
+}
+
+
+

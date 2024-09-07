@@ -1,0 +1,169 @@
+/* Ensure the body and html take up full viewport height */
+body, html {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    /* overflow: hidden; Prevent scrolling */
+  }
+  
+  /* Adjust the login container to flex accordingly */
+  .login-container {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* Ensure it takes up full viewport height */
+    align-items: stretch; /* Stretch children to fill the container */
+    background-color: #316159;
+    margin: 0; /* Override any default margins */
+    padding: 0; /* Override any default paddings */
+  }
+  
+  /* Left side with full background cover */
+  .left-side {
+    flex: 0 0 60%; /* Adjust the width of the left side */
+    background: url('/background/LoginBackground.png') no-repeat center center;
+    background-size: cover;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0; /* Override any default margins */
+    padding: 2rem; /* Override any default paddings */
+  }
+  
+  /* Right side with centered login form */
+  .login-intro {
+    margin-top: 200px;
+    max-width: 100%;
+    padding-right: 8rem;
+    padding-left: 8rem;
+  }
+  
+  .login-intro .welcome {
+    text-align: center;
+    display: block; /* ensures the div takes the full width */
+    max-width: none;
+    margin-bottom: -10px;
+  }
+
+  .login-intro .enhanced {
+    text-align: center;
+    display: block; /* ensures the div takes the full width */
+    max-width: none;
+    margin-bottom: 35px;
+  }
+
+  .login-intro h1 {
+    font-size: 2em; /* Adjust the font size as needed */
+    line-height: 1.2em; /* Adjust the line height to ensure it fits on one line */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    overflow: hidden; /* Hide overflow if necessary */
+    text-overflow: ellipsis; /* Add an ellipsis if the text is too long */
+    max-width: 100%; /* Ensure the container allows the text to expand to one line */
+    margin: 0 auto; /* Center the heading horizontally */
+    padding: 0; /* Adjust padding as necessary */
+  }
+
+  .login-form {
+    max-width: 50%;
+    background: #c5d2d0;
+    padding: 5rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .input-group {
+    padding: 0 8rem;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .input-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: #9a9a9a;
+  }
+  
+  input[type="email"],
+  input[type="password"] {
+    width: 100%;
+    padding: 0.75rem 2.5rem;
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    font-size: 1rem;
+  }
+  
+  input::placeholder {
+    color: #9a9a9a;
+  }
+
+  .login-actions {
+    align-items: center;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .login-button {
+    width: 59.5%; /* Auto width based on content */
+    padding: 0.75rem 2.5rem;
+    margin: 0 auto; /* Center the button */
+    display: block; /* Make the button a block element to respect the margin auto */
+    border-radius: 20px;
+    border: 1px solid #ddd;
+    background-color: #316159;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+  }
+  
+  .login-button:disabled {
+    background-color: #ccc;
+  }
+
+  input:-webkit-autofill,
+  input:-webkit-autofill:hover, 
+  input:-webkit-autofill:focus, 
+  input:-webkit-autofill:active {
+    -webkit-box-shadow: 0 0 0 30px rgb(255, 255, 216) inset !important;
+  }
+
+  input:-webkit-autofill {
+    -webkit-text-fill-color: black !important;
+  }
+  
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .login-container {
+      flex-direction: column;
+    }
+  
+    .left-side,
+    .login-form-container {
+      flex-basis: 100%;
+      max-width: 100%; /* Make sure both sides take full width on smaller screens */
+    }
+  
+    .intro-text {
+      position: static; /* Reset position on smaller screens */
+      margin-bottom: 2rem; /* Provide spacing from the following content */
+      text-align: center; /* Center the text */
+    }
+  }
+  
+  h5 {
+    font-weight: lighter !important;
+    text-align: center; 
+    color: #526360ec;
+  }
+
+  h4 {
+    font-weight: lighter !important; 
+    text-align: center; 
+  }
+  
+  
