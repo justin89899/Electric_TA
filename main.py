@@ -166,7 +166,7 @@ def run_all():
         # Find the most relevant slide for the current question's answer
         # most_relevant_snapshot_path = slides_snapshot.process_answers(pdf_paths, [bot_response])
 
-        # access_token = 'sl.BxwTot4ax0Ey_KLPCkkjNrb6xC4ehA48AvJWog1z2zhnuecKbTb80Gs5Tj5fsIy8gqBXDRP-AggnpUwJDFaOMcdPEEe-VVWDvfIDW9CBpewy-VE2URkdXcjijnSfNnLkD6brstN-k8HBnNWcYmCHj44'
+        # access_token = ''
         # dbx = dropbox.Dropbox(access_token)
         # dropbox_uploaded = slides_snapshot.upload_to_dropbox(most_relevant_snapshot_path, access_token)
 
@@ -274,7 +274,7 @@ if __name__ == "__main__":
 #         # Find the most relevant slide for the current question's answer
 #         most_relevant_snapshot_path = slides_snapshot.process_answers(pdf_paths, [bot_response])
 
-#         access_token = 'sl.Bx-STJ2bsWzxSdRODMeixBcdbHs1qlNc2WOE2KbMo1wpadpgQc9TCYYS43a755hkO6xsxLWQATrcOFYzfd0tt76ZKoanWALMDB1iejE2Fa0H7v_Dpc-VFOzvbwvqhk4J4K_8Wlxwnpx7cJkn7OdPeXI'
+#         access_token = ''
 #         dbx = dropbox.Dropbox(access_token)
 #         dropbox_uploaded = slides_snapshot.upload_to_dropbox(most_relevant_snapshot_path, access_token)
 
